@@ -4,15 +4,13 @@ import SwiftUI
 struct JSONEditorApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @AppStorage("appearanceMode") private var appearanceMode: AppearanceMode = .system
+    @Environment(\.openWindow) private var openWindow
     
     var body: some Scene {
-        // Menu bar item
         MenuBarExtra {
             Button("Open JSON Editor") {
+                openWindow(id: "main")
                 NSApp.activate(ignoringOtherApps: true)
-                if let window = NSApp.windows.first {
-                    window.makeKeyAndOrderFront(nil)
-                }
             }
             .keyboardShortcut("o")
             
@@ -26,8 +24,7 @@ struct JSONEditorApp: App {
             Image(systemName: "curlybraces")
         }
         
-        // Main window
-        WindowGroup {
+        Window("JSON Editor", id: "main") {
             ContentView(appearanceMode: $appearanceMode)
                 .preferredColorScheme(appearanceMode.colorScheme)
         }
@@ -48,7 +45,6 @@ struct JSONEditorApp: App {
         }
     }
 }
-
 class AppDelegate: NSObject, NSApplicationDelegate {
     func application(_ application: NSApplication, open urls: [URL]) {
         if let url = urls.first {

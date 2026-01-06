@@ -13,6 +13,9 @@ struct ContentView: View {
     @State private var currentCursorPath: [String] = []
     @State private var hasUnsavedChanges = false
     @State private var characterCount = 0
+    @State private var showUnsavedAlert = false
+    @State private var pendingFileURL: URL? = nil
+    @State private var editorRefreshID = UUID()
     
     @Binding var appearanceMode: AppearanceMode
     
@@ -28,6 +31,21 @@ struct ContentView: View {
                 if let url = notification.object as? URL { loadFile(url) }
             }
             .onDrop(of: [.fileURL], isTargeted: nil) { handleDrop($0) }
+            .alert("Unsaved Changes", isPresented: $showUnsavedAlert) {
+                Button("Cancel", role: .cancel) {
+                    pendingFileURL = nil
+                }
+                Button("Discard Changes", role: .destructive) {
+                    if let url = pendingFileURL {
+                        forceLoadFile(url)
+                    } else {
+                        forceNewFile()
+                    }
+                    pendingFileURL = nil
+                }
+            } message: {
+                Text("You have unsaved changes. Opening a new file will discard them.")
+            }
     }
     
     private var windowAccessor: some View {
@@ -101,6 +119,7 @@ struct ContentView: View {
             hasUnsavedChanges: $hasUnsavedChanges,
             characterCount: $characterCount
         )
+        .id(editorRefreshID)
     }
     
     @ToolbarContentBuilder
@@ -146,11 +165,21 @@ struct ContentView: View {
     }
     
     private func newFile() {
+        if hasUnsavedChanges {
+            pendingFileURL = nil
+            showUnsavedAlert = true
+            return
+        }
+        forceNewFile()
+    }
+    
+    private func forceNewFile() {
         rawJSON = "{}"
         fileName = "Untitled"
         fileURL = nil
         errorMessage = nil
         hasUnsavedChanges = false
+        editorRefreshID = UUID()
         if let data = rawJSON.data(using: .utf8) {
             nodes = (try? JSONParser.parse(data)) ?? []
             displayNodes = nodes
@@ -168,6 +197,15 @@ struct ContentView: View {
     }
     
     private func loadFile(_ url: URL) {
+        if hasUnsavedChanges {
+            pendingFileURL = url
+            showUnsavedAlert = true
+            return
+        }
+        forceLoadFile(url)
+    }
+    
+    private func forceLoadFile(_ url: URL) {
         do {
             let data = try Data(contentsOf: url)
             let json = try JSONSerialization.jsonObject(with: data)
@@ -182,6 +220,7 @@ struct ContentView: View {
             errorMessage = nil
             hasUnsavedChanges = false
             characterCount = rawJSON.count
+            editorRefreshID = UUID()
         } catch {
             errorMessage = "Failed to parse JSON: \(error.localizedDescription)"
             nodes = []

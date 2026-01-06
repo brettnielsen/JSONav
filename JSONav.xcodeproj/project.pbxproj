@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		6CCA900F2F0C47BE0077216B /* jsonview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jsonview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CCA900F2F0C47BE0077216B /* JSONav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		6CEC6F382F0C52F800F65ABC /* Exceptions for "jsonview" folder in "jsonview" target */ = {
+		6CEC6F382F0C52F800F65ABC /* Exceptions for "JSONav" folder in "JSONav" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 6CCA900E2F0C47BE0077216B /* jsonview */;
+			target = 6CCA900E2F0C47BE0077216B /* JSONav */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		6CCA90112F0C47BE0077216B /* jsonview */ = {
+		6CCA90112F0C47BE0077216B /* JSONav */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				6CEC6F382F0C52F800F65ABC /* Exceptions for "jsonview" folder in "jsonview" target */,
+				6CEC6F382F0C52F800F65ABC /* Exceptions for "JSONav" folder in "JSONav" target */,
 			);
-			path = jsonview;
+			path = JSONav;
 			sourceTree = "<group>";
 		};
 		6CEC6F542F0C70B100F65ABC /* screenshots */ = {
@@ -51,7 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				6CEC6F542F0C70B100F65ABC /* screenshots */,
-				6CCA90112F0C47BE0077216B /* jsonview */,
+				6CCA90112F0C47BE0077216B /* JSONav */,
 				6CCA90102F0C47BE0077216B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,7 +59,7 @@
 		6CCA90102F0C47BE0077216B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6CCA900F2F0C47BE0077216B /* jsonview.app */,
+				6CCA900F2F0C47BE0077216B /* JSONav.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,9 +67,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6CCA900E2F0C47BE0077216B /* jsonview */ = {
+		6CCA900E2F0C47BE0077216B /* JSONav */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6CCA901A2F0C47C00077216B /* Build configuration list for PBXNativeTarget "jsonview" */;
+			buildConfigurationList = 6CCA901A2F0C47C00077216B /* Build configuration list for PBXNativeTarget "JSONav" */;
 			buildPhases = (
 				6CCA900B2F0C47BE0077216B /* Sources */,
 				6CCA900C2F0C47BE0077216B /* Frameworks */,
@@ -80,14 +80,14 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				6CCA90112F0C47BE0077216B /* jsonview */,
+				6CCA90112F0C47BE0077216B /* JSONav */,
 				6CEC6F542F0C70B100F65ABC /* screenshots */,
 			);
-			name = jsonview;
+			name = JSONav;
 			packageProductDependencies = (
 			);
 			productName = jsonview;
-			productReference = 6CCA900F2F0C47BE0077216B /* jsonview.app */;
+			productReference = 6CCA900F2F0C47BE0077216B /* JSONav.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +105,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6CCA900A2F0C47BE0077216B /* Build configuration list for PBXProject "jsonview" */;
+			buildConfigurationList = 6CCA900A2F0C47BE0077216B /* Build configuration list for PBXProject "JSONav" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -119,7 +119,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6CCA900E2F0C47BE0077216B /* jsonview */,
+				6CCA900E2F0C47BE0077216B /* JSONav */,
 			);
 		};
 /* End PBXProject section */
@@ -286,15 +286,15 @@
 				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = jsonview/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = JsonView;
+				INFOPLIST_FILE = JSONav/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = JSONav;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = brett.jsonview;
+				PRODUCT_BUNDLE_IDENTIFIER = brett.JSONav;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -329,15 +329,15 @@
 				ENABLE_RESOURCE_ACCESS_USB = NO;
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = jsonview/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = JsonView;
+				INFOPLIST_FILE = JSONav/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = JSONav;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = brett.jsonview;
+				PRODUCT_BUNDLE_IDENTIFIER = brett.JSONav;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -352,7 +352,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6CCA900A2F0C47BE0077216B /* Build configuration list for PBXProject "jsonview" */ = {
+		6CCA900A2F0C47BE0077216B /* Build configuration list for PBXProject "JSONav" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6CCA90182F0C47C00077216B /* Debug */,
@@ -361,7 +361,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6CCA901A2F0C47C00077216B /* Build configuration list for PBXNativeTarget "jsonview" */ = {
+		6CCA901A2F0C47C00077216B /* Build configuration list for PBXNativeTarget "JSONav" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6CCA901B2F0C47C00077216B /* Debug */,
