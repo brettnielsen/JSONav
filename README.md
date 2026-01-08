@@ -110,7 +110,7 @@ Contributions are welcome! Feel free to open issues or submit pull requests.
 
 ## License
 
-MIT License — see [LICENSE](LICENSE) for details.
+GPL-v3 License — see [LICENSE](LICENSE) for details.
 
 ## Acknowledgments
 
